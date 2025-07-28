@@ -35,7 +35,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./build s3://${{ secrets.S3_BUCKET_NAME }} --delete
+          aws s3 sync ./frontend/build s3://${{ secrets.S3_BUCKET_NAME }} --delete
           aws s3 cp s3://${{ secrets.S3_BUCKET_NAME }}/index.html s3://${{ secrets.S3_BUCKET_NAME }}/index.html --metadata-directive REPLACE --cache-control max-age=0
 
       - name: Invalidate CloudFront cache
