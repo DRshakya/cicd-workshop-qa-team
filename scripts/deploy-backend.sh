@@ -16,4 +16,5 @@ aws ssm send-command \
     --document-name "AWS-RunShellScript" \
     --targets "[{\"Key\":\"InstanceIds\",\"Values\":[\"$EC2_INSTANCE_ID\"]}]" \
     --parameters "{\"commands\":[\"sudo su - root -c '/root/deployment/deployment_script_team2-dipankar.sh'\"]}" \
+    --instance-ids "i-01a33d573c140f24c" \
     --region "$AWS_REGION"
