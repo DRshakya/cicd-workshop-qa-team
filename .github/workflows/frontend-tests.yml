@@ -2,9 +2,10 @@ name: Frontend Tests
 on:
   push:
     branches:
-      - team2-dipankar
+      - team2-dipankar #trigger when pushed to team2-dipankar branch
   pull_request:
-    branches: -main
+    branches: \
+      - main #trigger when pull request is created to main branch
 
 jobs:
   test:
