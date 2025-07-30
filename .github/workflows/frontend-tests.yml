@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - team2-dipankar
+  pull_request:
+    branches: -main
 
 jobs:
   test:
