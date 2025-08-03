@@ -47,3 +47,5 @@ jobs:
       - name: Print website URL
         run: |
           echo "Website deployed to: http://${{ secrets.S3_BUCKET_NAME }}.s3-website-${{ secrets.AWS_REGION }}.amazonaws.com"
+
+        
