@@ -39,3 +39,5 @@ if (require.main === module) {
 }
 
 module.exports = runMigrations;
+
+//for test
