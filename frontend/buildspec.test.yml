@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - echo Installing dependencies...
+      - cd frontend
+      - npm install
+
+  build:
+    commands:
+      - echo Running unit tests...
+      - npm run test:unit
+      - echo Running integration tests...
+      - npm run test:integration
+      - echo Running all tests with coverage...
+      - npm test
+
+artifacts:
+  files:
+    - frontend/coverage/**/*
+
+cache:
+  paths:
+    - frontend/node_modules/**/*
