@@ -9,7 +9,8 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on:
+      - codebuild-team2-dipankar-GitHub-Actions-Runner-${{ github.run_id }}-${{ github.run_attempt }}
 
     steps:
       - uses: actions/checkout@v4
