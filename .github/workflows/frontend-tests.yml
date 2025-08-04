@@ -25,13 +25,13 @@ jobs:
         working-directory: ./frontend
         run: npm install
 
-      # - name: Run unit tests
-      #   working-directory: ./frontend
-      #   run: npm run test:unit
+      - name: Run unit tests
+        working-directory: ./frontend
+        run: npm run test:unit
 
-      # - name: Run integration tests
-      #   working-directory: ./frontend
-      #   run: npm run test:integration
+      - name: Run integration tests
+        working-directory: ./frontend
+        run: npm run test:integration
 
       - name: Run all tests with coverage
         working-directory: ./frontend
