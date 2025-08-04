@@ -1,0 +1,38 @@
+name: Frontend Tests
+on:
+  push:
+    branches:
+      - team2-dipankar #trigger when pushed to team2-dipankar branch
+  pull_request:
+    branches:
+      - main #trigger when pull request is created to main branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./frontend
+        run: npm install
+
+      # - name: Run unit tests
+      #   working-directory: ./frontend
+      #   run: npm run test:unit
+
+      # - name: Run integration tests
+      #   working-directory: ./frontend
+      #   run: npm run test:integration
+
+      - name: Run all tests with coverage
+        working-directory: ./frontend
+        run: npm test
