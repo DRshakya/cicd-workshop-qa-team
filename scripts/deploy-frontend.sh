@@ -18,8 +18,6 @@ npm ci
 echo "🧪 Building for staging..."
 REACT_APP_API_URL="$STAGING_API_URL" npm run build
 
-fi
-
 # Deploy to S3
 echo "☁️ Deploying to S3 bucket..."
 aws s3 sync ./build s3://"$S3_BUCKET_NAME" --delete --exact-timestamps
